@@ -1,7 +1,7 @@
 const { DataSource } = require("apollo-datasource");
 const axios = require("axios");
 
-class AuthAPI extends DataSource {
+class Auth extends DataSource {
   async register(username) {
     const res = await axios.post(`/users/${username}/token`);
     return res.data;
@@ -18,4 +18,4 @@ class AuthAPI extends DataSource {
   }
 }
 
-module.exports = AuthAPI;
+module.exports = Auth;
